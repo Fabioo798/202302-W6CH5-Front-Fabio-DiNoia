@@ -30,6 +30,12 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/reportWebVitals.ts",
+      "<rootDir>/src/index.ts"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/icons-bi": "^1.2.15",
+    "@testing-library/dom": "^8.20.0",
+    "@testing-library/react": "^13.4.0"
   }
 }
