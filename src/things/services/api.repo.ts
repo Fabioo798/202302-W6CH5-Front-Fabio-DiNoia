@@ -40,7 +40,7 @@ export class ThingApiRepo {
 
   async createThing(thing: ProtoThingStructure): Promise<ThingStructure> {
     const response = await fetch(this.url, {
-      method: "POST",
+      method: "PATCH",
       body: JSON.stringify(thing),
       headers: {
         "Content-type": "application/json",
