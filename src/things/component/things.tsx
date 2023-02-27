@@ -1,12 +1,12 @@
 import { useMemo, useState } from "react";
 import { useThings } from "../hooks/use.things";
-import { ProtoThingStructure, ThingStructure } from "../model/model";
+import { ThingStructure } from "../model/model";
 import { ThingApiRepo } from "../services/api.repo";
 import "./things.css";
 
 export function Things() {
   const repo = useMemo(() => new ThingApiRepo(), []);
-  const { things, addThings, updateThings, deleteThing } = useThings(repo);
+  const { things, addThings, deleteThing } = useThings(repo);
   const [newThingName, setNewThingName] = useState("");
   const [newThingCategory, setNewThingCategory] = useState("");
 
