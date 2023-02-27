@@ -21,10 +21,15 @@ export function useThings(repo: ThingApiRepo) {
     loadThings();
   }, [dispatch, repo]);
 
+  useEffect(() => {
+    // Update the things in the store whenever the things array changes
+    dispatch(ac.loadCreator(things));
+  }, [dispatch, things]);
+
   const addThings = async (thing: ProtoThingStructure) => {
     try {
-      const finalThings = await repo.createThing(thing);
-      dispatch(ac.addCreator(finalThings));
+      const finalThing = await repo.createThing(thing);
+      dispatch(ac.addCreator(finalThing));
     } catch (error) {
       console.log((error as Error).message);
     }

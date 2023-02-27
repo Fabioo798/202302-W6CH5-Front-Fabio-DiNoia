@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { useThings } from "../hooks/use.things";
 import { ProtoThingStructure, ThingStructure } from "../model/model";
 import { ThingApiRepo } from "../services/api.repo";
+import "./things.css";
 
 export function Things() {
   const repo = useMemo(() => new ThingApiRepo(), []);
@@ -10,10 +11,13 @@ export function Things() {
   const [newThingCategory, setNewThingCategory] = useState("");
 
   const handleAddClick = async () => {
-    const newThing: any = [{
-      name: newThingName,
-      category: newThingCategory,
-    }];
+    console.log("Add button clicked");
+    const newThing: any = [
+      {
+        name: newThingName,
+        category: newThingCategory,
+      },
+    ];
     await addThings(newThing);
     setNewThingName("");
     setNewThingCategory("");
@@ -28,13 +32,16 @@ export function Things() {
             <li key={item.id}>
               {item.name} | {item.category}
               <button
+                className="modify"
                 onClick={() => {
                   // Define a function to update the thing when the "modify" button is clicked
                 }}
               >
                 Modify
               </button>
-              <button onClick={() => deleteThing(item.id)}>delete</button>
+              <button className="delete" onClick={() => deleteThing(item.id)}>
+                delete
+              </button>
             </li>
           ))}
           <li>
@@ -48,7 +55,9 @@ export function Things() {
               value={newThingCategory}
               onChange={(e) => setNewThingCategory(e.target.value)}
             />
-            <button onClick={handleAddClick}>Add</button>
+            <button className="add" onClick={handleAddClick}>
+              Add
+            </button>
           </li>
         </ul>
       </section>
