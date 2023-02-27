@@ -1,0 +1,96 @@
+/* Add some padding to the body */
+body {
+  padding: 20px;
+}
+
+/* Style the title */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Style the section */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the list */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Style the list items */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+/* Style the input fields */
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* Style the buttons */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.add {
+  background-color: #4caf50;
+}
+
+button.modify {
+  background-color: #ffc107;
+  margin-right: 10px;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+/* Style the form container */
+li:last-child {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Style the list items for smaller screens */
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Style the buttons for smaller screens */
+  button {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 200px;
+  }
+}
